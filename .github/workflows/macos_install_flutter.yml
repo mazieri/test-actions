@@ -11,10 +11,9 @@ jobs:
       - uses: actions/setup-java@v1
         with:
           java-version: "12.x"
-      - uses: subosito/flutter-action@1.5.3
+      - uses: subosito/flutter-action@1
         with:
           channel: "stable"
-      - run: flutter channel stable
       - run: flutter upgrade
       - run: flutter precache
       - run: flutter doctor
