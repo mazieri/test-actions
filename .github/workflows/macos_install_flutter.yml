@@ -3,11 +3,12 @@ on:
   push:
     branches: main
 jobs:
-  install_and_create_app:
+  macos:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v2
-      - run: git clone -b stable https://github.com/flutter/flutter.git
+      - run: ls | mkdir flutter | cd flutter | git clone -b stable https://github.com/flutter/flutter.git
+      - run: export PATH="$PATH:`pwd`/flutter/bin"
       - run: flutter channel stable
       - run: flutter upgrade
       - run: flutter precache
