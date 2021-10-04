@@ -1,5 +1,4 @@
-# test-actions
-pra eu testar actions diferentes do github
+# só uns testes de actions
 
 - [ ] macos + flutter
 - [ ] ubuntu + flutter
