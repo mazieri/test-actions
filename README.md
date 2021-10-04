@@ -1,4 +1,4 @@
 # só uns testes de actions
 
-- [ ] macos + flutter
+- [x] macos + flutter
 - [ ] ubuntu + flutter
