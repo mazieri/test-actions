@@ -1,15 +1,19 @@
-name: install_and_create_app
+name: macos
 on:
   push:
     branches: main
 jobs:
-  macos:
+  install_and_create_app:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v2
-      - run: git clone -b stable https://github.com/flutter/flutter.git
-      - run: cd flutter
-      - run: export PATH="$PATH:/Users/runner/work/test-actions/test-actions/flutter/bin"
+      - uses: actions/setup-java@v1
+        with:
+          java-version: "12.x"
+      - uses: subosito/flutter-action@v1
+        with:
+          channel: "stable"
+      - run: flutter pub get
       - run: flutter channel stable
       - run: flutter upgrade
       - run: flutter precache
