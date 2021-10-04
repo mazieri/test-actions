@@ -7,7 +7,8 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v2
-      - run: ls | mkdir flutter | cd flutter | git clone -b stable https://github.com/flutter/flutter.git
+      - run: git clone -b stable https://github.com/flutter/flutter.git
+      - run: cd flutter
       - run: export PATH="$PATH:`pwd`/flutter/bin"
       - run: flutter channel stable
       - run: flutter upgrade
