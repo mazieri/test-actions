@@ -1,0 +1,15 @@
+name: teste
+on:
+  push:
+    branches: main
+jobs:
+  fazer:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: sudo snap install flutter --classic
+      - run: flutter sdk-path
+      - run: flutter precache
+      - run: flutter doctor
+      - run: flutter create myapp
+      - run: cd myapp
