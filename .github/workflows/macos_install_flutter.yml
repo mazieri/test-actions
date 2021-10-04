@@ -2,7 +2,7 @@ name: macos
 on:
   push:
     tags:
-      - apple-v*
+      - apple_v*
 jobs:
   install_and_create_app:
     runs-on: macos-latest
