@@ -1,14 +1,16 @@
-name: teste
+name: install_and_create_app
 on:
   push:
     branches: main
 jobs:
-  fazer:
+  install_and_create_app:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - run: sudo snap install flutter --classic
       - run: flutter sdk-path
+      - run: flutter channel stable
+      - run: flutter upgrade
       - run: flutter precache
       - run: flutter doctor
       - run: flutter create myapp
