@@ -1,0 +1,16 @@
+name: install_and_create_app
+on:
+  push:
+    branches: main
+jobs:
+  install_and_create_app:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: git clone -b stable https://github.com/flutter/flutter.git
+      - run: flutter channel stable
+      - run: flutter upgrade
+      - run: flutter precache
+      - run: flutter doctor
+      - run: flutter create myapp
+      - run: cd myapp
