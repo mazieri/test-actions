@@ -9,7 +9,7 @@ jobs:
       - uses: actions/checkout@v2
       - run: git clone -b stable https://github.com/flutter/flutter.git
       - run: cd flutter
-      - run: pwd
+      - run: export PATH="$PATH:/Users/runner/work/test-actions/test-actions/flutter/bin"
       - run: flutter channel stable
       - run: flutter upgrade
       - run: flutter precache
