@@ -1,7 +1,8 @@
 name: macos
 on:
   push:
-    branches: main
+    tags:
+      - apple
 jobs:
   install_and_create_app:
     runs-on: macos-latest
