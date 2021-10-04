@@ -18,5 +18,3 @@ jobs:
       - run: flutter precache
       - run: flutter doctor
       - run: flutter create myapp
-      - run: cd myapp
-      - run: flutter run
